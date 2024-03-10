@@ -1,1 +1,15 @@
-<p>inventory works!</p>
+<h1>My Inventory</h1>
+
+<!-- TODO: Display My Inventory-->
+<div class="inventory-grid">
+    <!-- <div class="card">
+        <img [src]="item.icon" width="50" />
+        <p>{{item.name}}</p>
+    </div> -->
+
+    <!-- TODO: Extract Item  -->
+    <app-inventory-item *ngFor="let item of materialList" [item]="item"></app-inventory-item>
+
+</div>
+
+<p *ngIf="materialList.length == 0">No Inventory availible at the moment</p>
