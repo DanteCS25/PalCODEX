@@ -17,6 +17,7 @@ export class InventoryItemComponent {
   //add all behaviour and variables
   @Input() item: Materials = {
     id: 0,
+    material_icon: "assets/materials/Coal.png",
     material_name: "Dummy",
     material_amount: 10000
   }
