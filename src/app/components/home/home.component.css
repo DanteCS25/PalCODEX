@@ -1,8 +1,8 @@
 /* Set background color for the entire page */
 body {
     margin: -8px; /* Remove default body margin */
-    height: 3000px;
-    width: 1403px;
+    height: auto;
+    /* width: 1403px; */
     background-size: cover;
     background-position: center;
   }
