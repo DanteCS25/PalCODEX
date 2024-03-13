@@ -1,12 +1,12 @@
 /* Set background color for the entire page */
 body {
-    margin: -8px; /* Remove default body margin */
+    
     height: auto;
     width: auto;
     background-size: cover;
     background-position: center;
   }
-  
+
   /* Navbar container */
   .navbar {
     display: flex;

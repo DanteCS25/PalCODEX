@@ -3,6 +3,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { UserinvComponent } from './components/userinv/userinv.component';
+import { CraftablesComponent } from './craftables/craftables.component';
 
 export const routes: Routes = [
     // other routes...
@@ -10,6 +11,7 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'materials', component: InventoryComponent },
     { path: 'inventory', component: UserinvComponent },
+    { path: 'craftables', component: CraftablesComponent },
     { path: "", redirectTo: "home", pathMatch: "full" }
     // other routes...
 ];

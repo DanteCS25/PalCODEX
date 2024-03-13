@@ -1,15 +1,43 @@
-<h1>My Inventory</h1>
+<body style="background-image: url('assets/inventory.png'); ">
 
-<!-- TODO: Display My Inventory-->
-<div class="inventory-grid">
-    <!-- <div class="card">
-        <img [src]="item.icon" width="50" />
-        <p>{{item.name}}</p>
-    </div> -->
+    <div class="navbar">
+        <div class="logo">
+          <img src="assets/Logo.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="/inventory">Materials</a></li>
+          <li><a href="/materials">Inventory</a></li>
+          <li><a href="/craftables">Craftables</a></li>
+        </ul>
+        <div class="user-dropdown">
+          <button class="user-button">
+            <img src="assets/menu.png" alt="Profile" class="profile-image">
+          </button>
+          <div class="dropdown-content">
+            <a href="/login">Admin</a>
+            <a href="/login"> Login </a>
+          </div>
+        </div>
+      </div>
 
-    <!-- TODO: Extract Item  -->
-    <app-inventory-item *ngFor="let item of materialList" [item]="item"></app-inventory-item>
+      <h1 class="Inventory">
+        Inventory
+      </h1>
+    
+    <!-- TODO: Display My Inventory-->
+    <div class="inventory-grid" style="width: 1200px;">
+        <!-- <div class="card">
+            <img [src]="item.icon" width="50" />
+            <p>{{item.name}}</p>
+        </div> -->
+    
+        <!-- TODO: Extract Item  -->
+        <app-inventory-item *ngFor="let item of materialList" [item]="item"></app-inventory-item>
+    
+    </div>
+    
+    <p *ngIf="materialList.length == 0">No Inventory availible at the moment</p>
 
-</div>
+</body>
 
-<p *ngIf="materialList.length == 0">No Inventory availible at the moment</p>

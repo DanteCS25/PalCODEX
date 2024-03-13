@@ -1,4 +1,29 @@
-<h1>User Inventory</h1>
+<body style="background-image: url('assets/inventory.png'); ">
+
+    <div class="navbar">
+        <div class="logo">
+          <img src="assets/Logo.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="/inventory">Materials</a></li>
+          <li><a href="/materials">Inventory</a></li>
+          <li><a href="/craftables">Craftables</a></li>
+        </ul>
+        <div class="user-dropdown">
+          <button class="user-button">
+            <img src="assets/menu.png" alt="Profile" class="profile-image">
+          </button>
+          <div class="dropdown-content">
+            <a href="/login">Admin</a>
+            <a href="/login"> Login </a>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="Inventory">
+        Materials
+      </h1>
 
 <!-- TODO: Display My Inventory-->
 <div class="inventory-grid">
@@ -11,5 +36,7 @@
     <app-userinv-item *ngFor="let item of userinvList" [item]="item"></app-userinv-item>
 
 </div>
+
+</body>
 
 <p *ngIf="userinvList.length == 0">No Inventory availible at the moment</p>
