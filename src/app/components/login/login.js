@@ -8,9 +8,9 @@ const users = [
 const admin = { username: "admin", password: "admin2024now", validationCode: "01523" };
 
 function authenticate() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const validationCode = document.getElementById("validationCode").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var validationCode = document.getElementById("validationCode").value;
 
     // Check if it's admin
     if (username === admin.username && password === admin.password) {

@@ -1,0 +1,15 @@
+<h1>User Inventory</h1>
+
+<!-- TODO: Display My Inventory-->
+<div class="inventory-grid">
+    <!-- <div class="card">
+        <img [src]="item.icon" width="50" />
+        <p>{{item.name}}</p>
+    </div> -->
+
+    <!-- TODO: Extract Item  -->
+    <app-userinv-item *ngFor="let item of userinvList" [item]="item"></app-userinv-item>
+
+</div>
+
+<p *ngIf="userinvList.length == 0">No Inventory availible at the moment</p>
