@@ -2,7 +2,7 @@
 body {
     margin: -8px; /* Remove default body margin */
     height: auto;
-    /* width: 1403px; */
+    width: auto;
     background-size: cover;
     background-position: center;
   }
