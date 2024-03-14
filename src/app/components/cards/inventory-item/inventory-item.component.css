@@ -4,25 +4,30 @@
   justify-content: center; /* Adjust as needed */
 }
 
+.column {
+  float: left;
+  width: 25%;
+}
+
 .container {
-  width: 500px;
-  padding: 0;
+  /* width: 90%; */
+  /* padding: 0; */
   background: linear-gradient(71deg, #0d1212, #3da077, #0d1212); 
   border-radius: 45px; 
-  position: relative;
+  /* position: relative; */
   border-radius: 45px;
-  margin: 50px;
+  margin: 2%;
 }
 
 
 .example-card {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  gap: 32px; */
   
-  @media screen and (max-width: 991px) {
+  /* @media screen and (max-width: 991px) {
     grid-template-columns: 1fr;
-  }
+  } */
 
 
   border: 2px solid transparent;
