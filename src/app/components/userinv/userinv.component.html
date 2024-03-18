@@ -1,41 +1,43 @@
 <body style="background-image: url('assets/inventory.png'); ">
 
-    <div class="navbar">
-        <div class="logo">
-          <img src="assets/Logo.png" alt="Logo">
-        </div>
-        <ul class="nav-links">
-          <li><a href="/home">Home</a></li>
-          <li><a href="/materials">Materials</a></li>
-          <li><a href="/inventory">Inventory</a></li>
-          <li><a href="/craftables">Craftables</a></li>
-        </ul>
-        <div class="user-dropdown">
-          <button class="user-button">
-            <img src="assets/menu.png" alt="Profile" class="profile-image">
-          </button>
-          <div class="dropdown-content">
-            <a href="/login">Admin</a>
-            <a href="/login"> Login </a>
-          </div>
-        </div>
+  <div class="navbar">
+    <div class="logo">
+      <img src="assets/Logo.png" alt="Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/materials">Materials</a></li>
+      <li><a href="/inventory">Inventory</a></li>
+      <li><a href="/craftables">Craftables</a></li>
+    </ul>
+    <div class="user-dropdown">
+      <button class="user-button">
+        <img src="assets/menu.png" alt="Profile" class="profile-image">
+      </button>
+      <div class="dropdown-content">
+        <a href="/login">Admin</a>
+        <a href="/login"> Login </a>
       </div>
+    </div>
+  </div>
 
-      <h1 class="Inventory">
-        User Inventory
-      </h1>
+  <h1 class="Inventory">
+    User Inventory
+  </h1>
 
-<!-- TODO: Display My Inventory-->
-<div class="inventory-grid">
+  <!-- TODO: Display My Inventory-->
+  <div class="inventory-grid">
     <!-- <div class="card">
         <img [src]="item.icon" width="50" />
         <p>{{item.name}}</p>
     </div> -->
 
     <!-- TODO: Extract Item  -->
-    <app-userinv-item *ngFor="let item of userinvList" [item]="item"></app-userinv-item>
+    <div class="row">
+      <app-userinv-item *ngFor="let item of userinvList" [item]="item"></app-userinv-item>
+    </div>
 
-</div>
+  </div>
 
 </body>
 

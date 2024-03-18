@@ -1,12 +1,14 @@
-<div class="container">
-    <mat-card class="example-card">
-    <mat-card-header class="h1">
-        <mat-card-title>{{item.material_name}}</mat-card-title>
-        <mat-card-subtitle>User ID: {{item.profile_id}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-        <img [src]="item.material_icon" width="50px" height="50px">
-        <p>Amount{{item.material_amount}}</p>
-    </mat-card-content>
-</mat-card>
+<div class="column">
+    <div class="container">
+        <mat-card class="example-card">
+            <mat-card-header class="h1">
+                <mat-card-title>{{item.material_name}}</mat-card-title>
+                <mat-card-subtitle>User ID: {{item.profile_id}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <img [src]="item.material_icon" width="50px" height="50px">
+                <p>Amount: {{item.material_amount}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </div>
