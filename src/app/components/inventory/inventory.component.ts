@@ -13,16 +13,19 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './inventory.component.css'
 })
 export class InventoryComponent {
+  materialList: Materials[] = [];
+  selectedItem: Materials | null = null; // To store the selected item details
 
-  constructor(private service: MaterialsService) { }
-
-  materialList: Materials[] = []
+  constructor(private service: MaterialsService) {}
 
   ngOnInit() {
     this.service.getAllMaterials().subscribe((data) => {
       console.log(data);
       this.materialList = data;
-    })
+    });
   }
 
+  showItemDetails(item: Materials) {
+    this.selectedItem = item; // Set the selected item
+  }
 }

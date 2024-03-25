@@ -31,7 +31,7 @@
     <div class="inventory-grid left">
         <!-- TODO: Extract Item  -->
         <div class="row">
-          <app-inventory-item *ngFor="let item of materialList" [item]="item"></app-inventory-item>
+          <app-inventory-item *ngFor="let item of materialList" [item]="item" (itemSelected)="showItemDetails($event)"></app-inventory-item>
         </div>
     
   </div>
@@ -42,5 +42,16 @@
 
   <p class="row row-cols-1 row-cols-md-5 g-4" *ngIf="materialList.length == 0">No Inventory availible at the moment</p>
 
-  <div class="view right"></div>
+  <!-- View Container -->
+<div class="view right">
+  <ng-container *ngIf="selectedItem; else noSelection">
+    <h2>{{ selectedItem?.material_name }}</h2>
+    <img [src]="selectedItem?.material_icon" width="100" height="100">
+    <p>User ID: {{ selectedItem?.profile_id }}</p>
+    <p>Amount: {{ selectedItem?.material_amount }}</p>
+  </ng-container>
+  <ng-template #noSelection>
+    <p>Please select an item</p>
+  </ng-template>
+</div>
 </body>
