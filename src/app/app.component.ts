@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { InventoryComponent } from './components/inventory/inventory.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @Component({
@@ -14,16 +13,3 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 export class AppComponent {
   title = 'PalCODEX';
 }
-
-@Component({
-  declarations: [
-    // Your components
-  ],
-  imports: [
-    // Other necessary modules
-    MatFormFieldModule, // Add MatFormFieldModule here
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }

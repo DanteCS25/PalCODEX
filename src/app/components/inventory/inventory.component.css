@@ -1,24 +1,57 @@
 body {
-    height: auto;
+    height: 100%;
     width: auto;
-    background-size: 80%;
-    background-position: 50% -8%;
+    background-size: 60%;
+    background-position: 100% -2%;
     background-color: black;
     background-repeat: no-repeat;
+    
   }
 
-  .row {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+  .scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+.scroll-container::-webkit-scrollbar-track {
+    background: #3d3d3d;
+    border-radius: 4px;
+}
+
+/* Handle */
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #0b8100;
+}
+
+  .right{
+    float: right;
+  }
+  
+  .view{
+    margin-top: -400px;
+    margin-right: 50px;
+    width: 700px;
+    height: 400px;
+    background-color: #28282d;
   }
 
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  .left{
+    float: left;
   }
 
+  .scroll-container {
+    margin-left: 100px;
+    max-height: 350px; /* Set your desired maximum height */
+    overflow-y: auto;
+    width: 550px;
+}
+  
   /* Navbar container */
   .navbar {
     display: flex;
@@ -106,65 +139,20 @@ body {
 
   .Inventory{
     font-size: 50px;
-    margin-bottom: 200px;
-    text-align: center;
-
-  line-height: calc(20px + 20vh);
-/*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
-  color: #fccaff; */
-  text-shadow: 0 0 5px #01C38D, 0 0 15px #01C38D, 0 0 20px #01C38D, 0 0 40px #01C38D, 0 0 60px #03573f, 0 0 10px #01C38D, 0 0 98px #03573f;
-    color: #fff6a9;
-  font-family: Orbitron;
-  text-align: center;
-  animation: blink 12s infinite;
-  -webkit-animation: blink 12s infinite;
+    margin-left: 100px;
+    color: aliceblue;
+    font-weight: 500;
+    margin-top: 50px;
+    letter-spacing: 15px;
 }
 
-@-webkit-keyframes blink {
-  20%,
-  24%,
-  55% {
-    color: #111;
-    text-shadow: none;
-  }
-
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-/*     color: #fccaff;
-    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
-      text-shadow: 0 0 5px #01C38D, 0 0 15px #01C38D, 0 0 20px #01C38D, 0 0 40px #01C38D, 0 0 60px #03573f, 0 0 10px #01C38D, 0 0 98px #03573f;
-    color: #fff6a9;
-  }
+.inven_descrip{
+    color: aliceblue;
+    font-size: 20px;
+    margin-left: 100px;
+    letter-spacing: 6px;
+    margin-top: -25px;
+    font-weight: 200;
+    margin-bottom: 100px;
 }
 
-@keyframes blink {
-  20%,
-  24%,
-  55% {
-    color: #111;
-    text-shadow: none;
-  }
-
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-/*     color: #fccaff;
-    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
-      text-shadow: 0 0 5px #01C38D, 0 0 15px #01C38D, 0 0 20px #01C38D, 0 0 40px #01C38D, 0 0 60px #03573f, 0 0 10px #01C38D, 0 0 98px #03573f;
-    color: #fff6a9;
-  }
-}

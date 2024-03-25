@@ -5,12 +5,16 @@
   /* Adjust as needed */
 }
 
-.column {
-  float: left;
-  width: 33.33%;
-  height: 30em;
-  margin-bottom: 20px;
+.scroll-container {
+  max-height: 500px; /* Set your desired maximum height */
+  overflow-y: auto;
 }
+
+.column {
+  width: 500px;
+  height: 30em;
+}
+
 
 .container {
   /* width: 90%; */
@@ -19,9 +23,9 @@
   border-radius: 45px;
   /* position: relative; */
   border-radius: 45px;
-  margin: 2%;
   height: auto;
 }
+
 
 
 .example-card {
@@ -41,8 +45,8 @@
   padding: 40px;
 
   img {
-    margin-top: 40px;
-    margin-bottom: 25px;
+    margin-top: -180px;
+    margin-left: 250px;
     width: 100px;
     height: 100px;
   }
@@ -58,14 +62,26 @@
 p {
   color: #fff;
   font-family: 'Lato', sans-serif;
-  text-align: center;
   font-size: 0.8rem;
   line-height: 150%;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
+.left{
+  float: left;
+}
 
+.right{
+  float: right;
+}
+
+.view{
+  margin-top: -50px;
+  width: 700px;
+  height: 400px;
+  background-color: #28282d;
+}
 
 /* CSS */
 .button-86 {
@@ -88,6 +104,7 @@ p {
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-top: 30px;
+  margin-left: 35%;
 }
 
 .button-86::after,
