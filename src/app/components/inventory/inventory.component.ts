@@ -28,4 +28,25 @@ export class InventoryComponent {
   showItemDetails(item: Materials) {
     this.selectedItem = item; // Set the selected item
   }
+
+  addToCraftCart(item: Materials) {
+    item.material_count = (item.material_count || 0) + 1;
+    // Update the view or craft cart count as needed
+  }
+
+  sendMaterial(item: Materials) {
+    if (typeof item.id === 'number' && item.material_count) {
+      const newAmount = item.material_amount - item.material_count; // Updated calculation
+      this.service.updateMaterialAmount(item.id, newAmount).subscribe(() => {
+        item.material_amount = newAmount; // Update the local item amount
+        item.material_count = 0; // Reset the count after sending
+        // Optionally, refresh your materials list here
+      });
+    }
+  }
+
+  removeFromCart(item: Materials) {
+    item.material_count = (item.material_count || 0) - 1;
+    // Update the view or cart count as needed
+  }
 }

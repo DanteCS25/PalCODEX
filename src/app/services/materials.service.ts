@@ -16,4 +16,10 @@ export class MaterialsService {
   getAllMaterials(): Observable<Materials[]>{
     return this.http.get<Materials[]>(this.baseURL)
   }
+
+  updateMaterialAmount(id: number, newAmount: number): Observable<any> {
+    // Assuming you have an endpoint to update the material amount
+    return this.http.put(`${this.baseURL}/${id}`, { material_amount: newAmount });
+  }
 }
+

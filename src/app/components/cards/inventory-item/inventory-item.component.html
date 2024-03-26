@@ -9,7 +9,14 @@
                 <p>Amount: {{item.material_amount}}</p>
                 <img [src]="item.material_icon" width="50px" height="50px">
             </mat-card-content>
-            <button class="button-86"  (click)="onItemSelect()">View</button>
+            <div class="columns">
+                <button class="button-862" (click)="removeFromCart()"><img src="assets/minus.png" style="width: 20px; height: 20px;" alt="Logo"></button>
+                <button class="button-86"  (click)="onItemSelect()">View</button>
+                <button class="button-861" (click)="addToCart()"><img src="assets/plus.png" style="width: 20px; height: 20px;" alt="Logo"></button>
+            </div>
+            
+            
+            <button (click)="sendRequest.emit(item)" *ngIf="item?.material_count > 0">Send</button>
         </mat-card><br>
     </div>
 </div>
