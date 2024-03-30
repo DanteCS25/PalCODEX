@@ -45,9 +45,14 @@
     <img style="float: right; margin-right: 80px; margin-top: 50px;" [src]="selectedItem?.material_icon" width="170" height="170">
     <h2 style="margin-left: 50px; margin-top: 50px; max-width: 500px; font-size: 35px; letter-spacing: 5px; font-weight: 500; color: beige;">{{ selectedItem?.material_name }}</h2>
     <p style="margin-left: 50px; max-width: 500px; color: beige;">Amount: {{ selectedItem?.material_amount }}</p>
-    <p style="margin-left: 50px; max-width: 500px; color: beige;">Added to cart: {{ selectedItem?.material_count || 0 }}</p>
-    
-      <button class="animated-button1" (click)="sendMaterial(selectedItem)" *ngIf="selectedItem?.material_count && selectedItem?.material_count! > 0">Send</button>
+    <p style="margin-left: 50px; max-width: 500px; color: beige;">Added to cart: {{ selectedItem?.material_count || 0 }}</p><br><br><br><br><br><br>
+      <a class="a-n2" (click)="sendMaterial(selectedItem)" *ngIf="selectedItem?.material_count && selectedItem?.material_count! > 0">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Send      
+    </a>
   </ng-container>
   <ng-template #noSelection>
     <p style="color: aliceblue; text-align: center; margin-top: 27%;">Please select an item</p>

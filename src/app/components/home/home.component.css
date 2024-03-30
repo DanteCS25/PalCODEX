@@ -42,7 +42,7 @@ body {
   /* Neon light effect on hover */
 .nav-links li a:hover {
     text-decoration: none; /* Remove default underline */
-    text-shadow: 0 0 10px #01C38D, 0 0 15px #01C38D, 0 0 20px #01C38D; /* Neon light effect */
+    text-shadow: 0 0 10px #13d6e4, 0 0 15px #13d6e4, 0 0 20px #13d6e4; /* Neon light effect */
     transition: text-shadow 0.3s ease-in-out; /* Add transition for smooth effect */
   }
   

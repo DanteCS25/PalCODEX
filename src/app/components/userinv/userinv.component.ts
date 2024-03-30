@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Inventory } from '../../models/userinv.model';
 import { UserinvService } from '../../services/userinv.service';
 import { UserinvItemComponent } from '../cards/userinv-item/userinv-item.component';
@@ -14,15 +14,24 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 
 export class UserinvComponent {
+  filteredItems: Inventory[] = [];
+  selectedItem: Inventory = {} as Inventory;
+  userinvList: Inventory[] = [];
 
   constructor(private service: UserinvService) { }
-
-  userinvList: Inventory[] = []
 
   ngOnInit() {
     this.service.getAllUserinv().subscribe((data) => {
       console.log(data);
       this.userinvList = data;
-    })
+    });
+  }
+
+  saveToDatabase() {
+    // Implement logic to save changes to the database
+  }
+
+  searchMaterial(searchTerm: string) {
+    this.filteredItems = this.userinvList.filter(item => item.material_name.toLowerCase().includes(searchTerm.toLowerCase()));
   }
 }
