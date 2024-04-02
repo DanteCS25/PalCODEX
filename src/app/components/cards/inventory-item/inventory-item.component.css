@@ -5,14 +5,9 @@
   /* Adjust as needed */
 }
 
-.scroll-container {
-  max-height: 500px; /* Set your desired maximum height */
-  overflow-y: auto;
-}
-
 .column {
   width: 500px;
-  height: 20em;
+  height: 30em;
 }
 
 
@@ -23,7 +18,7 @@
   border-radius: 45px;
   /* position: relative; */
   border-radius: 45px;
-  height: 18.65em;
+  height: 328px;
 }
 
 
@@ -68,20 +63,7 @@ p {
   text-transform: uppercase;
 }
 
-.left{
-  float: left;
-}
 
-.right{
-  float: right;
-}
-
-.view{
-  margin-top: -50px;
-  width: 700px;
-  height: 400px;
-  background-color: #28282d;
-}
 
 /* CSS */
 .button-86 {
@@ -103,7 +85,8 @@ p {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-right: 50px; /* Adjust margin as needed */
+  margin-top: 30px;
+  margin-left: 35%;
 }
 
 .button-86::after,
@@ -172,7 +155,7 @@ p {
   touch-action: manipulation;
   display: flex;
   margin-right: 10px; /* Adjust margin as needed */
-  
+
 }
 
 .button-861 img,
