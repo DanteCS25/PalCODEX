@@ -30,36 +30,41 @@
   <!-- TODO: Display My Inventory-->
   <div class="scroll-container">
     <div class="inventory-grid left">
-        <!-- TODO: Extract Item  -->
-        <div class="row">
-          <app-inventory-item *ngFor="let item of materialList" [item]="item" (itemSelected)="showItemDetails($event)"></app-inventory-item>
-        </div>
-    
-  </div>
+      <!-- TODO: Extract Item  -->
+      <div class="row">
+        <app-inventory-item *ngFor="let item of materialList" [item]="item"
+          (itemSelected)="showItemDetails($event)"></app-inventory-item>
+      </div>
+    </div>
   </div>
 
   <p class="row row-cols-1 row-cols-md-5 g-4" *ngIf="materialList.length == 0">No Inventory availible at the moment</p>
 
   <!-- View Container -->
-<div class="view right" >
-  <ng-container *ngIf="selectedItem; else noSelection">
-    <img style="float: right; margin-right: 80px; margin-top: 50px;" [src]="selectedItem?.material_icon" width="170" height="170">
-    <h2 style="margin-left: 50px; margin-top: 50px; max-width: 500px; font-size: 35px; letter-spacing: 5px; font-weight: 500; color: beige;">{{ selectedItem?.material_name }}</h2>
-    <p style="margin-left: 50px; max-width: 500px; color: beige;">Amount: {{ selectedItem?.material_amount }}</p>
-    <p style="margin-left: 50px; max-width: 500px; color: beige;">Added to cart: {{ selectedItem?.material_count || 0 }}</p>
-    <button *ngIf="isAdmin" (click)="increaseMaterialAmount(selectedItem)">Increase Amount</button>
-    <br><br><br><br><br><br>
-      <a class="a-n2" (click)="sendMaterial(selectedItem)" *ngIf="selectedItem?.material_count && selectedItem?.material_count! > 0">
+  <div class="view right">
+    <ng-container *ngIf="selectedItem; else noSelection">
+      <img style="float: right; margin-right: 80px; margin-top: 50px;" [src]="selectedItem?.material_icon" width="170"
+        height="170">
+      <h2
+        style="margin-left: 50px; margin-top: 50px; max-width: 500px; font-size: 35px; letter-spacing: 5px; font-weight: 500; color: beige;">
+        {{ selectedItem?.material_name }}</h2>
+      <p style="margin-left: 50px; max-width: 500px; color: beige;">Amount: {{ selectedItem?.material_amount }}</p>
+      <p style="margin-left: 50px; max-width: 500px; color: beige;">Added to cart: {{ selectedItem?.material_count || 0
+        }}</p>
+      <button *ngIf="isAdmin" (click)="increaseMaterialAmount(selectedItem)">Increase Amount</button>
+      <br><br><br><br><br><br>
+      <a class="a-n2" (click)="sendMaterial(selectedItem)"
+        *ngIf="selectedItem?.material_count && selectedItem?.material_count! > 0">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-        Send      
-    </a>
-  </ng-container>
-  
-  <ng-template #noSelection>
-    <p style="color: aliceblue; text-align: center; margin-top: 27%;">Please select an item</p>
-  </ng-template>
-</div>
+        Send
+      </a>
+    </ng-container>
+
+    <ng-template #noSelection>
+      <p style="color: aliceblue; text-align: center; margin-top: 27%;">Please select an item</p>
+    </ng-template>
+  </div>
 </body>
