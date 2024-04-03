@@ -1,0 +1,128 @@
+body {
+    height: auto;
+    width: auto;
+    background-size: 100%;
+    background-position: 100% 10%; 
+    background-color: black;
+    background-repeat: no-repeat;
+    }
+    
+    .row {
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+    }
+    
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Navbar container */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      padding: 25px 20px;
+      margin: 0;
+      /* Remove any margins */
+    }
+    
+    /* Logo */
+    .logo img {
+      height: 40px;
+      padding-left: 20px;
+    }
+    
+    /* Navbar links */
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-right: 80px;
+    }
+    
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-family: Orbitron;
+    }
+    
+    /* Neon light effect on hover */
+    .nav-links li a:hover {
+      text-decoration: none;
+      /* Remove default underline */
+      text-shadow: 0 0 10px #26a0da, 0 0 15px #26a0da, 0 0 20px #26a0da;
+      /* Neon light effect */
+      transition: text-shadow 0.3s ease-in-out;
+      /* Add transition for smooth effect */
+    }
+    
+    /* User dropdown */
+    .user-dropdown {
+      position: relative;
+    }
+    
+    .user-button {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      margin-right: 40px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    
+    .profile-image {
+      width: 25px;
+      height: 25px;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #333;
+      min-width: 120px;
+    }
+    
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #555;
+    }
+    
+    .user-dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    /* Inventory Start */
+    
+    .Inventory{
+      font-size: 50px;
+      margin-left: 100px;
+      color: aliceblue;
+      font-weight: 500;
+      margin-top: 50px;
+      letter-spacing: 15px;
+  }
+  
+  .inven_descrip{
+      color: aliceblue;
+      font-size: 20px;
+      margin-left: 100px;
+      letter-spacing: 6px;
+      margin-top: -25px;
+      font-weight: 200;
+      margin-bottom: 50px;
+  }

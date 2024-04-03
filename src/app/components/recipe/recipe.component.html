@@ -1,0 +1,42 @@
+<p>recipe works!</p>
+<body style="background-image: url('assets/back4.png'); ">
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="assets/Logo.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="/materials">Materials</a></li>
+            <li><a href="/inventory">Inventory</a></li>
+            <li><a href="/craftinv">Crafted</a></li>
+        </ul>
+        <div class="user-dropdown">
+            <button class="user-button">
+                <img src="assets/menu.png" alt="Profile" class="profile-image">
+            </button>
+            <div class="dropdown-content">
+                <a href="/login">Admin</a>
+                <a href="/login"> Login </a>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="Inventory">
+        RECIPE
+      </h1>
+      <p class="inven_descrip">Recipe</p>
+
+    <!-- TODO: Display My Inventory-->
+    <div class="inventory-grid" style="width: 100%;">
+        <!-- TODO: Extract Item  -->
+        <div class="row">
+            <app-recipe-item *ngFor="let item of recipeList" [item]="item"></app-recipe-item>
+        </div>
+
+    </div>
+
+
+</body>
+
+<p *ngIf="recipeList.length == 0">No Inventory availible at the moment</p>
