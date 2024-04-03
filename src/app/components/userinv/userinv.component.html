@@ -27,15 +27,10 @@
   <p class="inven_descrip">Know What You Have, Own Your Journey: Your Inventory, Your Power!</p>
 
   <div class="edits">
-    <input type="text" placeholder="Search Material" style="background-image: url('assets/search.png'); background-repeat: no-repeat; background-size: 35px; background-position: 99% center;">
-    <input type="number" placeholder="Add Amount">
-    <input type="number" placeholder="Delete Amount">
-    <input type="number" placeholder="Edit Amount"> <br><br><br><br><br><br>
-    <a class="a-n2" href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+    <input type="text" [(ngModel)]="selectedItem.material_name" placeholder="Material Name">
+<input type="number" [(ngModel)]="selectedItem.material_amount" placeholder="Material Amount">
+    <br><br><br><br><br><br>
+    <a class="a-n2" (click)="saveToDatabase()">
       Save      
   </a>
   </div>
@@ -49,7 +44,7 @@
 
     <!-- TODO: Extract Item  -->
     <div class="row">
-      <app-userinv-item *ngFor="let item of userinvList" [item]="item"></app-userinv-item>
+      <app-userinv-item *ngFor="let item of userinvList" [item]="item" (viewDetails)="onItemViewDetails($event)"></app-userinv-item>
     </div>
 
   </div>

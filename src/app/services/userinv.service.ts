@@ -16,4 +16,9 @@ export class UserinvService {
   getAllUserinv(): Observable<Inventory[]>{
     return this.http.get<Inventory[]>(this.baseURL)
   } 
+
+  updateUserinv(item: Inventory): Observable<Inventory> {
+    return this.http.put<Inventory>(`${this.baseURL}/${item.id}`, item);
+  }
 }
+
