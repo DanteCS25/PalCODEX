@@ -22,7 +22,8 @@ export class UserinvItemComponent {
     profile_id: 2,
     material_icon: "assets/materials/Coal.png",
     material_name: "Coal",
-    material_amount: 0
+    material_amount: 0,
+    status: 'novice'
   }
 
   onViewDetailsClick(): void {

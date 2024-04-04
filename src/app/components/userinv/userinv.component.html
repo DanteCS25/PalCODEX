@@ -5,9 +5,10 @@
       <img src="assets/Logo.png" alt="Logo">
     </div>
     <ul class="nav-links">
-      <li><a href="/home">Home</a></li>
+      <li><a href="#">Home</a></li>
       <li><a href="/materials">Materials</a></li>
-      <li><a href="/inventory">Inventory</a></li>
+      <li><a href="/login">Inventory</a></li>
+      <li><a href="/recipe">Recipes</a></li>
       <li><a href="/craftinv">Crafted</a></li>
     </ul>
     <div class="user-dropdown">
@@ -27,26 +28,17 @@
   <p class="inven_descrip">Know What You Have, Own Your Journey: Your Inventory, Your Power!</p>
 
   <div class="edits">
-    <input type="text" [(ngModel)]="selectedItem.material_name" placeholder="Material Name">
-<input type="number" [(ngModel)]="selectedItem.material_amount" placeholder="Material Amount">
+    <input type="text" ngModel="selectedItem.material_name" placeholder="Material Name">
+    <input type="number" ngModel="selectedItem.material_amount" placeholder="Material Amount">
     <br><br><br><br><br><br>
     <a class="a-n2" (click)="saveToDatabase()">
-      Save      
-  </a>
+      Save
+    </a>
   </div>
 
   <!-- TODO: Display My Inventory-->
   <div class="inventory-grid left" style="margin-top: 100px;">
-    <!-- <div class="card">
-        <img [src]="item.icon" width="50" />
-        <p>{{item.name}}</p>
-    </div> -->
-
-    <!-- TODO: Extract Item  -->
-    <div class="row">
-      <app-userinv-item *ngFor="let item of userinvList" [item]="item" (viewDetails)="onItemViewDetails($event)"></app-userinv-item>
-    </div>
-
+    <app-userinv-item *ngFor="let item of userinvList" [item]="item" (viewDetails)="onItemViewDetails($event)"></app-userinv-item>
   </div>
 
 </body>

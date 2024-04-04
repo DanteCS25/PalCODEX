@@ -10,15 +10,14 @@ export class UserinvService {
 
   constructor(private http:HttpClient) { }
 
-  private baseURL = "http://localhost:3000/inventory"
+  private baseURL = "http://localhost:3000/inventory";
 
-  //Get all inventory items
-  getAllUserinv(): Observable<Inventory[]>{
-    return this.http.get<Inventory[]>(this.baseURL)
-  } 
+  //Get all inventory items by status
+  getAllUserinvByStatus(status: string): Observable<Inventory[]> {
+    return this.http.get<Inventory[]>(`${this.baseURL}/user/${status}`);
+  }
 
   updateUserinv(item: Inventory): Observable<Inventory> {
     return this.http.put<Inventory>(`${this.baseURL}/${item.id}`, item);
   }
 }
-

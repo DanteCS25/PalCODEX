@@ -1,16 +1,16 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Inventory } from '../../models/userinv.model';
 import { UserinvService } from '../../services/userinv.service';
 import { UserinvItemComponent } from '../cards/userinv-item/userinv-item.component';
+import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-userinv',
-  standalone: true,
-  imports: [CommonModule, UserinvItemComponent, ReactiveFormsModule, FormsModule],
+  standalone: true, // Add this line to mark the component as standalone
+  imports: [UserinvItemComponent, CommonModule], // Ensure this line is present
   templateUrl: './userinv.component.html',
-  styleUrl: './userinv.component.css'
+  styleUrls: ['./userinv.component.css']
 })
 
 export class UserinvComponent {
@@ -18,11 +18,13 @@ export class UserinvComponent {
   selectedItem: Inventory = {} as Inventory;
   userinvList: Inventory[] = [];
 
-  constructor(private service: UserinvService) { }
+  constructor(private service: UserinvService, private authService: AuthService) { }
 
   ngOnInit() {
-    this.service.getAllUserinv().subscribe((data) => {
-      console.log(data);
+    const userStatus = JSON.parse(this.authService.getUserStatus());
+    console.log(userStatus.id)
+    this.service.getAllUserinvByStatus(userStatus.id).subscribe((data) => {
+      console.log(data)
       this.userinvList = data;
     });
   }
@@ -31,7 +33,7 @@ export class UserinvComponent {
     this.service.updateUserinv(this.selectedItem).subscribe({
       next: (updatedItem) => {
         console.log('Update successful', updatedItem);
-      this.ngOnInit(); // Refresh the inventory list
+        this.ngOnInit(); // Refresh the inventory list
       },
       error: (error) => {
         console.error('Update failed', error);
@@ -40,7 +42,7 @@ export class UserinvComponent {
   }
 
   searchMaterial(searchTerm: string) {
-    this.filteredItems = this.userinvList.filter(item => item.material_name.toLowerCase().includes(searchTerm.toLowerCase()));
+    this.filteredItems = this.userinvList.filter(item => item.material_name.toLowerCase().includes(searchTerm.toLowerCase()) && item.status === this.authService.getUserStatus());
   }
 
   onItemViewDetails(item: Inventory): void {

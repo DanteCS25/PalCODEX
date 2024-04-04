@@ -28,7 +28,7 @@ export class LoginComponent {
       .subscribe((success) => {
         //if success login navigate to home
         if(success) {
-          this.router.navigateByUrl("/home")//check the navigation
+          this.router.navigate(["/inventory"])// Redirect to user inventory
         }
       })
     }

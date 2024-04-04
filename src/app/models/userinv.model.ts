@@ -3,5 +3,6 @@ export interface Inventory {
     profile_id: number,
     material_icon: string,
     material_name: string,
-    material_amount: number
+    material_amount: number,
+    status: string // Add this line
 }
