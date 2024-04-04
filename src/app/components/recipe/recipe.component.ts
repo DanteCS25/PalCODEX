@@ -22,6 +22,8 @@ export class RecipeComponent {
     this.service.getAllRecipes().subscribe((data) => {
       console.log(data);
       this.recipeList = data;
+      console.log(this.recipeList);
+
     })
   }
 

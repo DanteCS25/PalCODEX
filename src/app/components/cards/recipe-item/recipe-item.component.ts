@@ -14,7 +14,10 @@ export class RecipeItemComponent {
 
   @Input() item: any = {
     id: 0,
-    recipe_craft_name: "dummy"
+    craft_name: "assets/materials/Coal.png",
+    material_req: "Dummy",
+    material_amount: 10000,
+    status: "Novice"
   }
 
 }
