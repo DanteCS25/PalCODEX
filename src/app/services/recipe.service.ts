@@ -16,4 +16,10 @@ export class RecipeService {
     return this.http.get<Recipe[]>(this.baseURL)
   }
 
+  //Get recipe by name -> need to display ingridients of recipe when view.
+  getSingleRecipe(name: string): Observable<Recipe[]>{
+    return this.http.get<Recipe[]>(`http://localhost:3000/recipe/${name}`);
+  }
+
+  
 }

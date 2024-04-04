@@ -23,7 +23,6 @@ export class RecipeComponent {
       console.log(data);
       this.recipeList = data;
       console.log(this.recipeList);
-
     })
   }
 
