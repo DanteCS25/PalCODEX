@@ -22,9 +22,9 @@ export class MaterialsService {
     return this.http.put(`${this.baseURL}/${id}`, { material_amount: newAmount });
   }
 
-  sendMaterialToUserInventory(itemId: number, userId: number, amount: number): Observable<any> {
+  sendMaterialToUserInventory(user_id:number,  item: string, material_id: number, amount: number): Observable<any> {
     // Assuming you have an endpoint to send material to user inventory
-    return this.http.post(`${this.baseURL}/userinv`, { itemId, userId, amount });
+    return this.http.put(`http://localhost:3000/material/${user_id}`, { user_id , item, material_id, amount });
   }
 }
 

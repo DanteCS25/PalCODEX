@@ -38,9 +38,11 @@ export class InventoryComponent {
   }
 
   sendMaterial(item: Materials) {
+    console.log(item)
     if (item && item.id && this.authService.getUserId()) { // Updated to use safe navigation operator
       const userId = this.authService.getUserId(); // Assuming you have a method to get the current user's ID
-      this.service.sendMaterialToUserInventory(item.id, userId, item.material_count??0).subscribe(() => {
+      console.log(userId)
+      this.service.sendMaterialToUserInventory(userId, item.material_name, userId, item.material_count??0).subscribe(() => {
         console.log('Material sent to user inventory');
         // Optionally, refresh your materials and user inventory list here
       });

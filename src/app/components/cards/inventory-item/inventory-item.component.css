@@ -7,7 +7,8 @@
 
 .column {
   width: 500px;
-  height: 30em;
+  height: 25em;
+  margin-bottom: -50px;
 }
 
 
@@ -68,7 +69,7 @@ p {
 /* CSS */
 .button-86 {
   all: unset;
-  width: 80px;
+  width: 120px; /* Adjusted width */
   height: 30px;
   font-size: 15px;
   background: transparent;
@@ -85,8 +86,8 @@ p {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-top: 30px;
-  margin-left: 35%;
+  margin-right: 30px;
+  margin-left: 20px;
 }
 
 .button-86::after,
@@ -155,7 +156,6 @@ p {
   touch-action: manipulation;
   display: flex;
   margin-right: 10px; /* Adjust margin as needed */
-
 }
 
 .button-861 img,
@@ -229,7 +229,7 @@ p {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-right: 50px; /* Adjust margin as needed */
+  margin-right: 10px; /* Adjust margin as needed */
 }
 
 .button-862::after,
@@ -281,5 +281,7 @@ p {
 .columns {
   width: 100%;
   display: flex;
-  margin-top: 30px;
+  justify-content: center;
+  align-items: center; /* Add this line */
+  margin-top: 60px;
 }

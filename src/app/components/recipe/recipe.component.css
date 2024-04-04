@@ -1,10 +1,11 @@
 body {
-    height: auto;
+    height: 100%;
     width: auto;
     background-size: 100%;
     background-position: 100% 10%; 
     background-color: black;
     background-repeat: no-repeat;
+    color: white;
     }
     
     .row {

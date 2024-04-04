@@ -51,7 +51,7 @@
       <p style="margin-left: 50px; max-width: 500px; color: beige;">Amount: {{ selectedItem?.material_amount }}</p>
       <p style="margin-left: 50px; max-width: 500px; color: beige;">Added to cart: {{ selectedItem?.material_count || 0
         }}</p>
-      <button *ngIf="isAdmin" (click)="increaseMaterialAmount(selectedItem!)">Increase Amount</button>
+      <!-- <button *ngIf="isAdmin" (click)="increaseMaterialAmount(selectedItem!)">Increase Amount</button> -->
       <br><br><br><br><br><br>
       <a class="a-n2" (click)="sendMaterial(selectedItem!)" *ngIf="selectedItem?.material_count && selectedItem?.material_count!! > 0">Send</a>
     </ng-container>

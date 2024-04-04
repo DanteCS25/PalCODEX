@@ -35,7 +35,7 @@ export class AuthService {
 
   getUserId(): number {
     // Implement logic to get the current user's ID
-    return 1; // Placeholder, replace with actual user ID retrieval
+    return 2; // Placeholder, replace with actual user ID retrieval
   }
 
   getUserStatus(): string {
