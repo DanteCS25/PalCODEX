@@ -16,7 +16,7 @@
             </div>
             
             
-            <button (click)="sendRequest.emit(item)" *ngIf="item?.material_count > 0">Send</button>
+            <button (click)="sendRequest.emit(item)" *ngIf="item?.material_count! > 0">Send</button>
         </mat-card><br>
     </div>
 </div>

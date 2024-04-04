@@ -12,12 +12,9 @@ import { Recipe } from '../../../models/recipe.model';
 })
 export class RecipeItemComponent {
 
-  @Input() item: Recipe = {
+  @Input() item: any = {
     id: 0,
-    craft_name: "assets/materials/Coal.png",
-    material_req: "Dummy",
-    material_amount: 10000,
-    status: "Novice"
+    recipe_craft_name: "Dummy"
   }
 
 }

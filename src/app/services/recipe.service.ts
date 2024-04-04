@@ -10,7 +10,7 @@ export class RecipeService {
 
   constructor(private http:HttpClient) { }
 
-  private baseURL = "http://localhost:3000/recipe"
+  private baseURL = "http://localhost:3000/recipe/distinct"
 
   getAllRecipes(): Observable<Recipe[]>{
     return this.http.get<Recipe[]>(this.baseURL)

@@ -16,12 +16,14 @@ export class RecipeComponent {
 
   constructor(private service: RecipeService) { }
 
-  recipeList: Recipe[] = []
+  recipeList: any[] = []
 
   ngOnInit() {
     this.service.getAllRecipes().subscribe((data) => {
       console.log(data);
       this.recipeList = data;
+      console.log(this.recipeList);
+
     })
   }
 

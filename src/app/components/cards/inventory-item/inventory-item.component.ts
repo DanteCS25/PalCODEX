@@ -2,11 +2,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Materials } from '../../../models/materials.model';
 import { MaterialsService } from '../../../services/materials.service';
 import { MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-inventory-item',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule, CommonModule],
   templateUrl: './inventory-item.component.html',
   styleUrl: './inventory-item.component.css'
 })
