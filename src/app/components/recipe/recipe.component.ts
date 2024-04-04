@@ -16,7 +16,7 @@ export class RecipeComponent {
 
   constructor(private service: RecipeService) { }
 
-  recipeList: Recipe[] = []
+  recipeList: any[] = []
 
   ngOnInit() {
     this.service.getAllRecipes().subscribe((data) => {
