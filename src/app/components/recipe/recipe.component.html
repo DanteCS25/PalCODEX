@@ -44,9 +44,10 @@
         <ng-container *ngIf="selectedRecipe">
             <h1 style="margin-left: 50px; margin-top: 50px; max-width: 500px; font-size: 35px; letter-spacing: 5px; font-weight: 500; color: beige;">{{selectedRecipe[0].craft_name}}</h1>
             <h2 style="margin-left: 50px; max-width: 500px; color: beige;">Status Required: {{selectedRecipe[0].status_req}}</h2>
+            <!-- If status != staus hide craft button -->
+            <!-- Show user why they can't craft -->
             <div *ngFor="let item of selectedRecipe">
-                <h3
-                    style="margin-left: 50px; max-width: 500px; color: beige;">
+                <h3 style="margin-left: 50px; max-width: 500px; color: beige;">
                     {{ item.material_req }}</h3>
                 <p style="margin-left: 50px; max-width: 500px; color: beige;">Amount Required: {{
                     item.material_amount }}</p>
