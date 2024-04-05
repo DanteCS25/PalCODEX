@@ -64,7 +64,7 @@
             </div>
             @if (selectedRec.isCraftable) {
                 <div>
-                    <button style="margin-left: 50px;">Craft Recipe</button>
+                    <button (click)="craftNewRecipe(selectedRecipe[0])" style="margin-left: 50px;">Craft Recipe</button>
                 </div>
             }@else {
                 <p style="color: red;">Not enough inredients availible in inventory marked in red</p>

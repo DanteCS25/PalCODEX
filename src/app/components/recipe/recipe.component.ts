@@ -25,17 +25,17 @@ export class RecipeComponent {
 
   ngOnInit() {
     this.service.getAllRecipes().subscribe((data) => {
-      console.log(data);
+      // console.log(data);
       this.recipeList = data;
-      console.log(this.recipeList);
+      // console.log(this.recipeList);
       this.getUserInventory()
     })
   }
 
   getRecipe(recipeName: string) {
     this.service.getSingleRecipe(recipeName).subscribe(data => {
-      console.log("getRecipe")
-      console.log(data)
+      // console.log("getRecipe")
+      // console.log(data)
       this.selectedRecipe = data; // Assuming the data is an array and you're interested in the first item
       this.checkCraftability()
     });
@@ -43,10 +43,10 @@ export class RecipeComponent {
 
   getUserInventory() {
     const userId = JSON.parse(this.authService.getUserStatus());
-    console.log(userId.id)
+    // console.log(userId.id)
     this.service.getAllUserinvById(userId.id).subscribe((data) => {
-      console.log("getUserInventory")
-      console.log(data)
+      // console.log("getUserInventory")
+      // console.log(data)
       this.userinvList = data;
     });
   }
@@ -54,19 +54,19 @@ export class RecipeComponent {
   checkCraftability() {
     //Default, we assume we have enough ingredients.
     this.selectedRec!.isCraftable = true
-    console.log("checkCraftability")
-    console.log(this.selectedRec.isCraftable)
-    console.log(this.selectedRecipe)
-    console.log(this.userinvList)
+    // console.log("checkCraftability")
+    // console.log(this.selectedRec.isCraftable)
+    // console.log(this.selectedRecipe)
+    // console.log(this.userinvList)
     //Loop through to see if we have enough
     this.selectedRecipe!.forEach((ingredient) => {
-      console.log(ingredient.material_amount)
+      // console.log(ingredient.material_amount)
       this.userinvList.forEach((userinv) => {
-        console.log(userinv.material_amount)
+        // console.log(userinv.material_amount)
         var matName = userinv.material_name
         var craftName = ingredient.material_req
-        console.log(matName)
-        console.log(craftName)
+        // console.log(matName)
+        // console.log(craftName)
         if (matName == craftName) {
           //if any ingredient is not enough, set craftable to false
           if (ingredient.material_amount > userinv.material_amount) {
@@ -77,5 +77,15 @@ export class RecipeComponent {
         }
       })
     })
+  }
+
+  //When clicking on craft
+  craftNewRecipe(recipe: Recipe) {
+    if (this.selectedRecipe![0].craft_name  == recipe.craft_name) {
+      //Call our service function
+      console.log(this.userinvList)
+      console.log(this.selectedRecipe![0].craft_name)
+      // this.service.cratfRecipe(recipe, this.userinvList).subscribe()
+    }
   }
 }

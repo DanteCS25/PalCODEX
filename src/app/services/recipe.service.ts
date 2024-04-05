@@ -24,8 +24,13 @@ export class RecipeService {
     return this.http.get<Recipe[]>(`http://localhost:3000/recipe/${name}`);
   }
 
-  //TODO: Call the craft functionality
   getAllUserinvById(status: string): Observable<Inventory[]> {
     return this.http.get<Inventory[]>(`${this.userURL}/user/${status}`);
   }
+
+  //TODO: Call the craft functionality
+  // cratfRecipe(recipe: Recipe, inventory: Inventory[]): Observable<Recipe> {
+  //   var craftUrl = "http://localhost:3000/recipe/" + recipe.craft_name + "/craft"
+  //   return this.http.put<Recipe>(craftUrl, { recipe: recipe.craft_name,  inventory: inventory})
+  // }
 }
