@@ -28,6 +28,7 @@ export class RecipeComponent {
       console.log(data);
       this.recipeList = data;
       console.log(this.recipeList);
+      this.getUserInventory()
     })
   }
 
@@ -36,6 +37,7 @@ export class RecipeComponent {
       console.log("getRecipe")
       console.log(data)
       this.selectedRecipe = data; // Assuming the data is an array and you're interested in the first item
+      this.checkCraftability()
     });
   }
 
@@ -52,11 +54,20 @@ export class RecipeComponent {
   checkCraftability() {
     //Default, we assume we have enough ingredients.
     this.selectedRec!.isCraftable = true
-
+    console.log("checkCraftability")
+    console.log(this.selectedRec.isCraftable)
+    console.log(this.selectedRecipe)
+    console.log(this.userinvList)
     //Loop through to see if we have enough
     this.selectedRecipe!.forEach((ingredient) => {
+      console.log(ingredient.material_amount)
       this.userinvList.forEach((userinv) => {
-        if (ingredient.craft_name === userinv.material_name) {
+        console.log(userinv.material_amount)
+        var matName = userinv.material_name
+        var craftName = ingredient.material_req
+        console.log(matName)
+        console.log(craftName)
+        if (matName == craftName) {
           //if any ingredient is not enough, set craftable to false
           if (ingredient.material_amount > userinv.material_amount) {
             this.selectedRec.isCraftable = false

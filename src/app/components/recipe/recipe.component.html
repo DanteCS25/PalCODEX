@@ -33,8 +33,8 @@
     <div class="scroll-container">
         <div class="inventory-grid left">
             <div class="row">
-                <app-recipe-item *ngFor="let item of recipeList" [item]="item" (click)="getUserInventory()"
-                    (click)="getRecipe(item.recipe_craft_name)" (click)="checkCraftability()"></app-recipe-item>
+                <app-recipe-item *ngFor="let item of recipeList" [item]="item"
+                    (click)="getRecipe(item.recipe_craft_name)"></app-recipe-item>
             </div>
         </div>
     </div>
