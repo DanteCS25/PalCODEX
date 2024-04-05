@@ -26,16 +26,12 @@
         RECIPE
     </h1>
     <p class="inven_descrip">Recipe</p>
-
-    <!-- TODO: Display My Inventory-->
     <div class="inventory-grid" style="width: 100%;">
-        <!-- TODO: Extract Item  -->
 
     </div>
-    <!-- TODO: Display My Inventory-->
+    <!-- Recipe-->
     <div class="scroll-container">
         <div class="inventory-grid left">
-            <!-- TODO: Extract Item  -->
             <div class="row">
                 <app-recipe-item *ngFor="let item of recipeList" [item]="item"
                     (click)="getRecipe(item.recipe_craft_name)"></app-recipe-item>
@@ -43,13 +39,7 @@
         </div>
     </div>
     <p class="row row-cols-1 row-cols-md-5 g-4" *ngIf="recipeList.length == 0">No Recipes availible at the moment</p>
-    <!-- <div *ngIf="selectedRecipe" class="recipe-details">
-        <h2>{{selectedRecipe.craft_name}}</h2>
-        <p>Material Required: {{selectedRecipe.material_req}}</p>
-        <p>Amount: {{selectedRecipe.material_amount}}</p>
-        <p>Status: {{selectedRecipe.status}}</p>
-        Add more fields as needed
-    </div> -->
+    <!-- Recipe Ingredients -->
     <div class="view right">
         <ng-container *ngIf="selectedRecipe">
             <h1 style="margin-left: 50px; margin-top: 50px; max-width: 500px; font-size: 35px; letter-spacing: 5px; font-weight: 500; color: beige;">{{selectedRecipe[0].craft_name}}</h1>
