@@ -24,7 +24,7 @@ export class MaterialsService {
 
   sendMaterialToUserInventory(user_id:number,  item: string, material_id: number, amount: number): Observable<any> {
     // Assuming you have an endpoint to send material to user inventory
-    
+    window.location.reload();
     console.log(material_id)
     return this.http.put(`http://localhost:3000/material/${user_id}`, { user_id , item, material_id, amount });
   }
