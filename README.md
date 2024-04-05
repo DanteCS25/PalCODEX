@@ -56,7 +56,7 @@ List your collaborators
 
   <div style="text-align: center;">
     <a href="https://github.com/CWKrahtz">
-      <img src="src\content\profile.jpg" alt="CS Strijdom" width="100px">
+      <img src="src\content\profile.jpg" alt="Christian Krahtz" width="100px">
     </a>
     <br>
     <sub>Christian Krahtz</sub>
