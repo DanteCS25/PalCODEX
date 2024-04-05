@@ -41,8 +41,8 @@ export class AuthService {
   getUserStatus(): string {
     // Example logic to get the user's status and append '_craft'
     // const status = 'novice'; // This should be dynamically determined
-    const status = (sessionStorage.getItem('user')); // This should be dynamically determined
-    console.log(JSON.parse(status!))
-    return `${status}`;
+    const userId = (sessionStorage.getItem('user')); // This should be dynamically determined
+    console.log(JSON.parse(userId!))
+    return `${userId}`;
   }
 }

@@ -21,9 +21,9 @@ export class UserinvComponent {
   constructor(private service: UserinvService, private authService: AuthService) { }
 
   ngOnInit() {
-    const userStatus = JSON.parse(this.authService.getUserStatus());
-    console.log(userStatus.id)
-    this.service.getAllUserinvByStatus(userStatus.id).subscribe((data) => {
+    const userId = JSON.parse(this.authService.getUserStatus());
+    console.log(userId.id)
+    this.service.getAllUserinvByStatus(userId.id).subscribe((data) => {
       console.log(data)
       this.userinvList = data;
     });

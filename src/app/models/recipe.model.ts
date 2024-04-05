@@ -3,5 +3,6 @@ export interface Recipe {
     craft_name: string,
     material_req: string,
     material_amount: number,
-    status_req: string
+    status_req: string,
+    isCraftable: boolean //frontend
 }

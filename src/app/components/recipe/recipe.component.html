@@ -33,8 +33,8 @@
     <div class="scroll-container">
         <div class="inventory-grid left">
             <div class="row">
-                <app-recipe-item *ngFor="let item of recipeList" [item]="item"
-                    (click)="getRecipe(item.recipe_craft_name)"></app-recipe-item>
+                <app-recipe-item *ngFor="let item of recipeList" [item]="item" (click)="getUserInventory()"
+                    (click)="getRecipe(item.recipe_craft_name)" (click)="checkCraftability()"></app-recipe-item>
             </div>
         </div>
     </div>
@@ -42,16 +42,33 @@
     <!-- Recipe Ingredients -->
     <div class="view right">
         <ng-container *ngIf="selectedRecipe">
-            <h1 style="margin-left: 50px; margin-top: 50px; max-width: 500px; font-size: 35px; letter-spacing: 5px; font-weight: 500; color: beige;">{{selectedRecipe[0].craft_name}}</h1>
-            <h2 style="margin-left: 50px; max-width: 500px; color: beige;">Status Required: {{selectedRecipe[0].status_req}}</h2>
-            <!-- If status != staus hide craft button -->
-            <!-- Show user why they can't craft -->
+            <h1
+                style="margin-left: 50px; margin-top: 50px; max-width: 500px; font-size: 35px; letter-spacing: 5px; font-weight: 500; color: beige;">
+                {{selectedRecipe[0].craft_name}}</h1>
+            <h2 style="margin-left: 50px; max-width: 500px; color: beige;">Status Required:
+                {{selectedRecipe[0].status_req}}</h2>
+
             <div *ngFor="let item of selectedRecipe">
                 <h3 style="margin-left: 50px; max-width: 500px; color: beige;">
                     {{ item.material_req }}</h3>
-                <p style="margin-left: 50px; max-width: 500px; color: beige;">Amount Required: {{
-                    item.material_amount }}</p>
+                <!-- <p style="margin-left: 50px; max-width: 500px; color: beige;">
+                Amount Required: {{ item.material_amount }}</p> -->
+                <div *ngFor="let inv of userinvList">
+                    <div *ngIf="inv.material_name === item.material_req">
+                        <p style="margin-left: 50px; max-width: 500px;"
+                            [style]="inv.material_amount < item.material_amount ? 'color: red' : 'color: beige'">
+                            Amount Required: {{ item.material_amount }}
+                        </p>
+                    </div>                                  
+                </div>
             </div>
+            @if (selectedRec.isCraftable) {
+                <div>
+                    <button style="margin-left: 50px;">Craft Recipe</button>
+                </div>
+            }@else {
+                <p style="color: red;">Not enough inredients availible in inventory marked in red</p>
+            } 
         </ng-container>
     </div>
 </body>
