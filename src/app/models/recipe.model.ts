@@ -3,5 +3,5 @@ export interface Recipe {
     craft_name: string,
     material_req: string,
     material_amount: number,
-    status: string
+    status_req: string
 }

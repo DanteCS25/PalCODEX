@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { CraftinvService } from '../../../services/craftinv.service';
 import { Recipe } from '../../../models/recipe.model';
@@ -20,5 +20,12 @@ export class RecipeItemComponent {
     status: "Novice"
   }
 
+  @Output() viewRecipe = new EventEmitter<string>();
+
+  viewClicked() {
+    this.viewRecipe.emit(this.item.craft_name);
+  }
+
   
 }
+
