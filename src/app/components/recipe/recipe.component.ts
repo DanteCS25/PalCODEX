@@ -3,9 +3,13 @@ import { Inventory } from '../../models/userinv.model';
 import { Component } from '@angular/core'; // Added import statement for Component decorator
 import { RecipeService } from '../../services/recipe.service';
 import { AuthService } from '../../services/auth.service';
+import { RecipeItemComponent } from '../cards/recipe-item/recipe-item.component';
+import { CommonModule } from '@angular/common';
 
 @Component({ // Added @Component decorator
   selector: 'app-recipe',
+  standalone: true,
+  imports: [RecipeItemComponent, CommonModule],
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.css']
 })
@@ -18,7 +22,7 @@ export class RecipeComponent {
   recipeList: any[] = []
   selectedRecipe: Recipe[] | null = null
   userinvList: Inventory[] = [];
-  selectedRec: Recipe = {craft_name: '', material_req: '', material_amount: 0, status_req: '', isCraftable: false};
+  selectedRec: Recipe = { craft_name: '', material_req: '', material_amount: 0, status_req: '', isCraftable: false };
 
   ngOnInit() {
     this.service.getAllRecipes().subscribe((data) => {
@@ -38,7 +42,7 @@ export class RecipeComponent {
     });
   }
 
-  
+
   showItemDetails(item: Recipe) {
     this.selectedItem = item; // Set the selected item
   }
@@ -78,31 +82,32 @@ export class RecipeComponent {
           }
         }
       })
-    })
+    });
   }
 
   //When clicking on craft
-//   craftNewRecipe(recipe: Recipe) {
-//     if (this.selectedRecipe![0].craft_name  == recipe.craft_name) {
-//       //Call our service function
-//       console.log(this.userinvList)
-//       console.log(this.selectedRecipe![0].craft_name)
-//       // this.service.cratfRecipe(recipe, this.userinvList).subscribe()
-//     }
-//   }
-// }
+  //   craftNewRecipe(recipe: Recipe) {
+  //     if (this.selectedRecipe![0].craft_name  == recipe.craft_name) {
+  //       //Call our service function
+  //       console.log(this.userinvList)
+  //       console.log(this.selectedRecipe![0].craft_name)
+  //       // this.service.cratfRecipe(recipe, this.userinvList).subscribe()
+  //     }
+  //   }
+  // }
 
-sendRecipeToCraftInventory(item: Recipe) {
-  console.log(item)
-  if (item && item.id) { // Updated to use safe navigation operator
-    // const userId = this.authService.getUserId(); // Assuming you have a method to get the current user's ID
-    const userId = sessionStorage.getItem('user')
-    const id = JSON.parse(userId!)
-    console.log(item.id)
-    this.service.sendRecipeToCraftInventory( id.id, item.craft_name??0).subscribe(() => {
-      console.log('Material sent to user inventory');
-      // Optionally, refresh your materials and user inventory list here
-    });
+  sendRecipeToCraftInventory(item: Recipe) {
+    console.log(item)
+    if (item && item.id) { // Updated to use safe navigation operator
+      // const userId = this.authService.getUserId(); // Assuming you have a method to get the current user's ID
+      const userId = sessionStorage.getItem('user')
+      const id = JSON.parse(userId!)
+      console.log(item.id)
+      this.service.sendRecipeToCraftInventory(id.id, item.craft_name ?? 0).subscribe(() => {
+        console.log('Material sent to user inventory');
+        // Optionally, refresh your materials and user inventory list here
+      });
+    }
   }
-}}
+}
 

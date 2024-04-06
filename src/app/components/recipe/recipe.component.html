@@ -44,9 +44,8 @@
         <ng-container *ngIf="selectedRecipe">
             <h1
                 style="margin-left: 50px; margin-top: 50px; max-width: 500px; font-size: 35px; letter-spacing: 5px; font-weight: 500; color: beige;">
-                {{selectedRecipe?.[0]?.craft_name}}</h1>
-            <h2 style="margin-left: 50px; max-width: 500px; color: beige;">Status Required:
-                {{selectedRecipe?.[0]?.status_req}}</h2>
+                {{selectedRecipe[0]!.craft_name}}</h1>
+            <h2 style="margin-left: 50px; max-width: 500px; color: beige;">Status Required:{{selectedRecipe[0]!.status_req}}</h2>
 
             <div *ngFor="let item of selectedRecipe">
                 <h3 style="margin-left: 50px; max-width: 500px; color: beige;">
@@ -64,7 +63,7 @@
             </div>
             @if (selectedRec.isCraftable) {
                 <div>
-                    <a class="a-n2" (click)="sendRecipeToCraftInventory(selectedItem!)" *ngIf="selectedItem?.craft_name && selectedItem?.craft_name!! > 0">Send</a>
+                    <a class="a-n2" (click)="sendRecipeToCraftInventory(selectedItem!)" *ngIf="selectedItem?.craft_name && selectedItem!.craft_name">Send</a>
                 </div>
             }@else {
                 <p style="color: red;">Not enough inredients availible in inventory marked in red</p>
