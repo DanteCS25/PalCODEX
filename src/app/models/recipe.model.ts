@@ -4,5 +4,5 @@ export interface Recipe {
     material_req: string,
     material_amount: number,
     status_req: string,
-    isCraftable: boolean //frontend
+    isCraftable: boolean
 }
