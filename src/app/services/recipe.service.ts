@@ -13,6 +13,7 @@ export class RecipeService {
 
   private baseURL = "http://localhost:3000/recipe/distinct"
   private userURL = "http://localhost:3000/inventory";
+  private craftURL = "http://localhost:3000/craftinv"
 
   getAllRecipes(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(this.baseURL)
@@ -28,9 +29,16 @@ export class RecipeService {
     return this.http.get<Inventory[]>(`${this.userURL}/user/${status}`);
   }
 
-  //TODO: Call the craft functionality
-  // cratfRecipe(recipe: Recipe, inventory: Inventory[]): Observable<Recipe> {
-  //   var craftUrl = "http://localhost:3000/recipe/" + recipe.craft_name + "/craft"
-  //   return this.http.put<Recipe>(craftUrl, { recipe: recipe.craft_name,  inventory: inventory})
-  // }
+
+  cratfRecipe(recipe: Recipe, inventory: Inventory[]): Observable<Recipe> {
+    var craftUrl = "http://localhost:3000/recipe/" + recipe.craft_name + "/craft";
+    return this.http.put<Recipe>(craftUrl, { recipe: recipe.craft_name, inventory: inventory });
+}
+
+sendMaterialToUserInventory(profile_id:number,  craft_name: string): Observable<any> {
+  // Assuming you have an endpoint to send material to user inventory
+  window.location.reload();
+  console.log(profile_id)
+  return this.http.put(`http://localhost:3000/craftinv/${profile_id}`, { profile_id, craft_name});
+}
 }
