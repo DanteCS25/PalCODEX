@@ -52,7 +52,7 @@ List your collaborators
 
 <div style="text-align: center;">
     <a href="https://github.com/DanteCS25">
-      <img src="src\assest\Dante.jpg" alt="CS Strijdom" width="100px">
+      <img src="src\assets\Dante.jpg" alt="CS Strijdom" width="100px">
     </a>
     <br>
     <sub>CS Strijdom</sub>
@@ -134,7 +134,7 @@ These features and functions collectively contribute to creating a user-friendly
 
 ### Mockups
 
-![image1](src/assest/Mockup1.png)
+![image1](src/assets/Mockup1.png)
 
 ### Demo Video
 
