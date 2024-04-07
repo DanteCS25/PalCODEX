@@ -140,6 +140,10 @@ These features and functions collectively contribute to creating a user-friendly
 
 [View Demonstration](https://youtu.be/0DTvJQb8ZCk)
 
+### Back-End Repository
+
+[View Back-End](https://github.com/CWKrahtz/palcodex_backend.git)
+
 ## Conclusion
 ### License
 Rights reserved © 2024
