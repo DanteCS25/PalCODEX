@@ -37,6 +37,10 @@ If your README is long, add a table of contents to make it easy for users to fin
    ```sh
    ng serve --open
    ```
+5. Start the back-end server: open the back-end files
+   ```sh
+   npm run dev
+   ```
 
 ## UI-Design
 
