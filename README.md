@@ -40,7 +40,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## UI-Design
 
-![image1](src/content/Design2.png)
+![image1](src/assets/Design.png)
 
 ## Credits
 
@@ -48,7 +48,7 @@ List your collaborators
 
 <div style="text-align: center;">
     <a href="https://github.com/DanteCS25">
-      <img src="src\content\profile.jpg" alt="CS Strijdom" width="100px">
+      <img src="src\assest\Dante.jpg" alt="CS Strijdom" width="100px">
     </a>
     <br>
     <sub>CS Strijdom</sub>
@@ -56,7 +56,7 @@ List your collaborators
 
   <div style="text-align: center;">
     <a href="https://github.com/CWKrahtz">
-      <img src="src\content\profile.jpg" alt="Christian Krahtz" width="100px">
+      <img src="src\assets\yess.gif" alt="Christian Krahtz" width="100px">
     </a>
     <br>
     <sub>Christian Krahtz</sub>
@@ -130,11 +130,11 @@ These features and functions collectively contribute to creating a user-friendly
 
 ### Mockups
 
-![image1](src/content/Mockup_2.png)
+![image1](src/assest/Mockup1.png)
 
 ### Demo Video
 
-[View Demonstration](https://youtu.be/UgckVREWHOQ)
+[View Demonstration]([https://youtu.be/UgckVREWHOQ](https://youtu.be/0DTvJQb8ZCk))
 
 ## Conclusion
 ### License
