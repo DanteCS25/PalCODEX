@@ -134,7 +134,7 @@ These features and functions collectively contribute to creating a user-friendly
 
 ### Demo Video
 
-[View Demonstration]([https://youtu.be/UgckVREWHOQ](https://youtu.be/0DTvJQb8ZCk))
+[View Demonstration](https://youtu.be/0DTvJQb8ZCk)
 
 ## Conclusion
 ### License
