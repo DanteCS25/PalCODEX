@@ -34,7 +34,7 @@ body {
   
 
   .view {
-    margin-top: -400px;
+    margin-top: -450px;
     margin-right: 60px;
     min-width: 700px;
     height: 400px;
@@ -51,7 +51,7 @@ body {
 
   .scroll-container {
     margin-left: 100px;
-    max-height: 370px; /* Set your desired maximum height */
+    max-height: 463px; /* Set your desired maximum height */
     overflow-y: auto;
     width: 550px;
 }
