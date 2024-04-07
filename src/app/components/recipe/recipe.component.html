@@ -63,7 +63,7 @@
             </div>
             @if (selectedRec.isCraftable) {
                 <div>
-                    <a class="a-n2" (click)="sendRecipeToCraftInventory(selectedItem!)" *ngIf="selectedItem?.craft_name && selectedItem!.craft_name">Send</a>
+                    <a class="a-n2" (click)="sendRecipeToCraftInventory(selectedItem!)">Send</a>
                 </div>
             }@else {
                 <p style="color: red;">Not enough inredients availible in inventory marked in red</p>
