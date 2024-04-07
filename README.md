@@ -37,10 +37,14 @@ If your README is long, add a table of contents to make it easy for users to fin
    ```sh
    ng serve --open
    ```
+5. Start the back-end server: open the back-end files
+   ```sh
+   npm run dev
+   ```
 
 ## UI-Design
 
-![image1](src/content/Design2.png)
+![image1](src/assets/Design.png)
 
 ## Credits
 
@@ -48,7 +52,7 @@ List your collaborators
 
 <div style="text-align: center;">
     <a href="https://github.com/DanteCS25">
-      <img src="src\content\profile.jpg" alt="CS Strijdom" width="100px">
+      <img src="src\assest\Dante.jpg" alt="CS Strijdom" width="100px">
     </a>
     <br>
     <sub>CS Strijdom</sub>
@@ -56,7 +60,7 @@ List your collaborators
 
   <div style="text-align: center;">
     <a href="https://github.com/CWKrahtz">
-      <img src="src\content\profile.jpg" alt="Christian Krahtz" width="100px">
+      <img src="src\assets\yess.gif" alt="Christian Krahtz" width="100px">
     </a>
     <br>
     <sub>Christian Krahtz</sub>
@@ -72,24 +76,69 @@ List your collaborators
 
 ## Features
 
-1.
+###1 Inventory Management:
 
-Let your imagination soar and explore the endless possibilities with our feature-rich project! ✨
+Display user's inventory with materials and their details (name, icon, amount).
+Allow users to search for specific materials within their inventory.
+Enable users to select items from their inventory.
+Provide options to add or remove items from a cart.
+
+###2 Crafting Inventory:
+
+Display crafted items with details (name, amount).
+Allow users to view crafted items in their inventory.
+
+###3 Recipe Display:
+
+Present recipes along with their required ingredients.
+Enable users to view recipe details, including ingredients and crafting instructions.
+
+###4 User Authentication:
+
+Provide a login form for users to input their credentials (email, password).
+Allow users to log in and authenticate their identity.
+Implement user authentication status to control access to certain features or data.
+
+###5 Navigation:
+
+Include a navigation bar with links to various sections of the website (Home, Materials, Inventory, Recipes, Crafted).
+Provide a user dropdown menu with links for Admin and Login.
+
+###6 User Interaction:
+
+Allow users to interact with items in the inventory and crafting inventory, such as selecting, adding to cart, or viewing details.
+Enable users to search for specific materials or recipes within their inventory.
+
+###7 HTTP Requests Handling:
+
+Implement services to handle HTTP requests for fetching and updating inventory data (MaterialsService, CraftinvService).
+Manage HTTP requests for user authentication (AuthService).
+
+###8 Styling and Layout:
+
+Apply CSS styles to enhance the visual appeal and layout of the webpage.
+Customize scrollbar appearance and layout adjustments for better user experience.
+###9 Testing:
+
+Develop test suites to ensure the functionality and reliability of Angular components, such as HomeComponent.
+Conduct unit tests for individual components and services to verify their behavior.
+
+###10 Footer and Additional Information:
+
+Include a footer section with company information, quick links, and social media links.
+Provide additional information sections to inform users about the website's offerings, tools, and services.
+These features and functions collectively contribute to creating a user-friendly web application for managing inventory, crafting items, and exploring recipes.
 
 
 ## Final-Outcome
 
 ### Mockups
 
-![image1](src/content/Mockup_2.png)
+![image1](src/assest/Mockup1.png)
 
 ### Demo Video
 
-[View Demonstration](https://youtu.be/UgckVREWHOQ)
-
-### Deployement Link
-
-[Deploy on Github Pages](https://dantecs25.github.io/Galactic-Getaways-CS/)
+[View Demonstration](https://youtu.be/0DTvJQb8ZCk)
 
 ## Conclusion
 ### License
