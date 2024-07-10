@@ -48,7 +48,7 @@ List your collaborators
 
 <div style="text-align: center;">
     <a href="https://github.com/DanteCS25">
-      <img src="Dante.jpg" alt="CS Strijdom" width="100px">
+      <img src="assets/Dante.jpg" alt="CS Strijdom" width="100px">
     </a>
     <br>
     <sub>CS Strijdom</sub>
@@ -56,7 +56,7 @@ List your collaborators
 
   <div style="text-align: center;">
     <a href="https://github.com/CWKrahtz">
-      <img src="yess.gif" alt="Christian Krahtz" width="100px">
+      <img src="assets/yess.gif" alt="Christian Krahtz" width="100px">
     </a>
     <br>
     <sub>Christian Krahtz</sub>
@@ -71,7 +71,7 @@ List your collaborators
 
 ## UI-Design
 
-![image1](Design.png)
+![image1](assets/Design.png)
 
 ## Features
 
@@ -132,7 +132,7 @@ These features and functions collectively contribute to creating a user-friendly
 
 ### Mockups
 
-![image1](Mockup1.png)
+![image1](assets/Mockup1.png)
 
 ### Demo Video
 
