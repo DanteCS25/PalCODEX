@@ -3,6 +3,7 @@ import { Recipe } from '../models/recipe.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Inventory } from '../models/userinv.model';
+import { Craftinv } from '../models/craftinv.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,9 +30,11 @@ export class RecipeService {
     return this.http.get<Inventory[]>(`${this.userURL}/user/${status}`);
   }
 
-  cratfRecipe(recipe: Recipe, inventory: Inventory[]): Observable<Recipe> {
-    var craftUrl = "http://localhost:3000/recipe/" + recipe.craft_name + "/craft";
-    return this.http.put<Recipe>(craftUrl, { recipe: recipe.craft_name, inventory: inventory });
+  //Craft
+  cratfRecipe(recipe: Recipe, inventory: Inventory[]): Observable<Craftinv> {
+    var craftUrl = "http://localhost:3000/craft/craftRecipe";
+    console.log( { recipe: recipe.craft_name, inventory: inventory })
+    return this.http.post<Craftinv>(craftUrl, { recipe: recipe.craft_name, inventory: inventory });
   }
 
   sendRecipeToCraftInventory(profile_id: number, craft_name: string): Observable<any> {

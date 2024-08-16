@@ -57,9 +57,13 @@ export class RecipeComponent {
     });
   }
 
+
+  selectedRecipeIng: Inventory[] = []
+
   checkCraftability() {
     //Default, we assume we have enough ingredients.
     this.selectedRec!.isCraftable = true
+    this.selectedRecipeIng = []
     // console.log("checkCraftability")
     // console.log(this.selectedRec.isCraftable)
     // console.log(this.selectedRecipe)
@@ -74,10 +78,11 @@ export class RecipeComponent {
         // console.log(matName)
         // console.log(craftName)
         if (matName == craftName) {
+          this.selectedRecipeIng.push(userinv)
           //if any ingredient is not enough, set craftable to false
           if (ingredient.material_amount > userinv.material_amount) {
             this.selectedRec.isCraftable = false
-            console.log("Not Craftable" + userinv.material_name)
+            // console.log("Not Craftable" + userinv.material_name)
             return; //stop when any of the ingredients is not enough.
           }
         }
@@ -96,15 +101,15 @@ export class RecipeComponent {
   //   }
   // }
 
-  sendRecipeToCraftInventory(item: Recipe) {
-    console.log(item)
-    if (item && item.id) { // Updated to use safe navigation operator
+  sendRecipe() {
+    console.log(this.selectedRecipe)
+    if (this.selectedRecipe) { // Updated to use safe navigation operator
       // const userId = this.authService.getUserId(); // Assuming you have a method to get the current user's ID
       const userId = sessionStorage.getItem('user')
       const id = JSON.parse(userId!)
-      console.log(item.id)
-      this.service.sendRecipeToCraftInventory(id.id, item.craft_name ?? 0).subscribe(() => {
-        console.log('Material sent to user inventory');
+
+      this.service.cratfRecipe(this.selectedRecipe[0], this.selectedRecipeIng).subscribe(() => {
+        console.log('Api was called');
         // Optionally, refresh your materials and user inventory list here
       });
     }
